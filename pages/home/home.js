@@ -1,7 +1,7 @@
 /*
  * @Description: 
  * @Autor: Sixi
- * @LastEditTime: 2021-01-15 11:46:34
+ * @LastEditTime: 2021-01-15 16:36:38
  */
 // pages/home/home.js
 Page({
@@ -20,9 +20,36 @@ Page({
     vertical: false,
     autoplay: true,
     interval: 2000,
-    duration: 500
+    duration: 500,
+    gridItem:[
+      {
+        icon: "flower-o",
+        text: "平",
+        url: "https://www.baidu.com"
+      },
+      {
+        icon: "flower-o",
+        text: "安",
+        url: "https://www.baidu.com"
+      },
+      {
+        icon: "flower-o",
+        text: "喜",
+        url: "https://www.baidu.com"
+      },
+      {
+        icon: "flower-o",
+        text: "乐",
+        url: "https://www.baidu.com"
+      },
+    ]
   },
-
+itemClick(event){
+  console.log("🚀 ~ file: home.js ~ line 48 ~ itemClick ~ event", event)
+  wx.navigateTo({
+      url: event.currentTarget.dataset.url,
+    });
+},
   /**
    * 生命周期函数--监听页面加载
    */

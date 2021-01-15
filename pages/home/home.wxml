@@ -1,7 +1,7 @@
 <!--
  * @Description: 
  * @Autor: Sixi
- * @LastEditTime: 2021-01-15 11:47:35
+ * @LastEditTime: 2021-01-15 16:37:36
 -->
 <!--pages/home/home.wxml-->
 <view>
@@ -12,8 +12,14 @@
       </swiper-item>
     </block>
   </swiper>
-  <van-cell-group>
-      <van-cell title="单元格" value="内容1111111" />
-      <van-cell title="单元格" value="内容" label="描述信111111息" />
-  </van-cell-group>
+  <van-grid  :column-num="4">
+    <van-grid-item wx:for="{{gridItem}}" wx:key="text" icon="{{item.icon}}" text="{{item.text}}" data-url="{{item.url}}" bindtap="itemClick" />
+  </van-grid>
+  <van-card
+    num="2"
+    price="2.00"
+    desc="平安喜乐信息"
+    title="平安喜乐"
+    thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
+  />
 </view>
